@@ -27,7 +27,7 @@ const Header = () => {
         {menu === false ? (
           <Hamburger
             onClick={() => setMenu(true)}
-            className="size-9 hidden max-md:block"
+            className="size-5 hidden max-md:block"
           />
         ) : (
           <>
@@ -38,11 +38,11 @@ const Header = () => {
               <h1>Login</h1>
   
               <div className="flex gap-2 ">
-                <Cart className="size-7" />
+                <Cart className="size-10" />
                 <Person className="size-7" />
                 <Cross
                   onClick={() => setMenu(false)}
-                  className="absolute top-0 right-0 size-9"
+                  className="  absolute top-0 right-0 size-7"
                 />
               </div>
             </div>
