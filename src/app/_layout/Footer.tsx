@@ -6,7 +6,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#c9dce9] flex justify-between  p-[5rem] max-md:flex-col">
+      <div className="bg-[#EEF1DA] flex justify-between  p-[5rem] max-md:flex-col">
         <h1 className="font-bold  text-sm max-md:text-center ">
           My-Shopiee
         </h1>

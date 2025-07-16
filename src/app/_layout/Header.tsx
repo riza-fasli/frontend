@@ -4,6 +4,8 @@ import Cross from "@/icons/Cross";
 import Hamburger from "@/icons/Hamburger";
 
 import Person from "@/icons/person";
+import Spoon from "@/icons/Spoon";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Header = () => {
@@ -11,14 +13,16 @@ const Header = () => {
 
   return (
     <>
-      <div className="h-14 bg-amber-500 flex justify-between items-center p-[3rem] ">
-        <div className="font-bold font text-3xl text-amber-50">E-COMMERCE </div>
+      <div className="h-14 bg-amber-950 flex justify-between items-center  p-[3rem] ">
+        <div className="font-mono font text-5xl text-amber-50  flex justify-between "> <Spoon className='size-9'/>Zestzy </div>
+       
+        
 
         <div className="flex justify-between p-[2rem] items-center gap-[1rem] text-amber-50 font-bold max-md:hidden">
-          <h1>Home</h1>
-          <h1>Shop</h1>
-          <h1>Contact</h1>
-          <h1>Login</h1>
+          <Link href={"/"}>Home</Link>
+          <Link href={"/shop"}>Shop</Link>
+          <Link href={"/contact"}>Contact</Link>
+          <Link href={"/login"}>Login</Link>
 
           <Person className="size-6" />
           <Cart className="size-7" />
@@ -50,6 +54,8 @@ const Header = () => {
   
               
             </div>
+            
+           
           </>
         )}
       </div>

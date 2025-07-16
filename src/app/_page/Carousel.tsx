@@ -1,24 +1,24 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import purple1 from "../../../public/images/pexels-sylwester-ficek-154797634-32116402.jpg";
-import purple2 from "../../../public/images/pexels-evgeniya-davydova-35773675-11432074.jpg";
-import purple3 from "../../../public/images/pexels-creative-vix-375467.jpg";
+import purple1 from "../../../public/images/pexels-laker-5732751.jpg";
+import purple2 from "../../../public/images/pexels-gonzalo-acuna-166058093-12664793.jpg";
+import purple3 from "../../../public/images/pexels-tiarrasorte-30048198.jpg";
 import Arrowleft from "@/icons/Arrowleft";
 import Arrowright from "@/icons/Arrowright";
 
 const gallery = [
   { image: purple1,
-     heading: "FOOD",
-     subheading: "FOODEE",
+     heading: "Delicious & Mouth Watering Test.",
+     subheading: "Let’s Make Your Next Meal Unforgettable",
    },
    { image: purple2 ,
-     heading: "FOOD",
-     subheading: "FOODEE",
+     heading: "Delicious & Mouth Watering Test.",
+     subheading: "Let’s Make Your Next Meal Unforgettable",
    },
    { image: purple3, 
-    heading: "FOOD",
-    subheading: "FOODEE",
+    heading: "Delicious & Mouth Watering Test.",
+    subheading: "Let’s Make Your Next Meal Unforgettable",
     
     
    }];
@@ -54,8 +54,8 @@ const Carousel = () => {
         alt="purple"
       />
       <div className=" absolute h-screen flex justify-center items-center flex-col w-full">
-        <h1 className="font-bold text-7xl text-amber-50">{gallery.at(activeImage)?.heading}</h1>
-        <h2 className="font-bold text-7xl text-amber-50">{gallery.at(activeImage)?.subheading}</h2>
+        <h1 className="font-bold text-5xl text-amber-50">{gallery.at(activeImage)?.heading}</h1>
+        <h2 className="font-light text-3xl text-amber-50">{gallery.at(activeImage)?.subheading}</h2>
       </div>
       <div className="absolute h-screen flex items-center left-0">
         <Arrowleft onClick={previous}
