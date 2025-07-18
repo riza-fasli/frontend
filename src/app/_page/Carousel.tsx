@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import purple1 from "../../../public/images/pexels-laker-5732751.jpg";
-import purple2 from "../../../public/images/pexels-gonzalo-acuna-166058093-12664793.jpg";
-import purple3 from "../../../public/images/pexels-tiarrasorte-30048198.jpg";
+import purple1 from "../../../public/images/hmepg.jpg";
+import purple2 from "../../../public/images/hmepgu.jpg";
+import purple3 from "../../../public/images/hmepgee.jpg";
 import Arrowleft from "@/icons/Arrowleft";
 import Arrowright from "@/icons/Arrowright";
 

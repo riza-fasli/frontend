@@ -46,14 +46,14 @@ type TLoginschema = z.infer<typeof loginschema>;
             <input
               {...register("password")}
               className="w-full bg-amber-900/40 rounded-2xl p-2 mt-3 "
-              type="password"
+              type="password" 
               placeholder="password"
             />
             <div onClick={() => setShow(!show)}>
               {show == false ? (
-                <Eyeoff className="absolute top-1/3 right-3 size-5 " />
+                <Eyeoff className="absolute top-1/3 right-3 size-5 " type="password" />
               ) : (
-                <Eye className="absolute top-1/2 right-3 size-5 " />
+                <Eye className="absolute top-1/3 right-3 size-5 " type="text"/>
               )}
               
             </div>

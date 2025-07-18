@@ -25,7 +25,8 @@ const Header = () => {
           <Link href={"/login"}>Login</Link>
 
           <Person className="size-6" />
-          <Cart className="size-7" />
+          <div className="relative"><Cart className="size-7" />
+          <p className="absolute -top-2  bg-amber-700/60 -right-1 rounded-full size-5 text-sm text-center">0</p></div>
         </div>
 
         {menu === false ? (
@@ -42,7 +43,7 @@ const Header = () => {
               <h1>Login</h1>
   
               <div className="flex gap-2 ">
-                <Cart className="size-7" />
+                <Link href={"/cart"}><Cart className="size-7" /></Link>
                 <Person className="size-1" />
                 <Cross
                   onClick={() => setMenu(false)}

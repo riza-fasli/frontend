@@ -1,13 +1,13 @@
 import React from "react";
 // import Image from "next/image";
-import purple from "../../../public/images/pexels-aboodi-18698239.jpg";
-import burger from "../../../public/images/pexels-aboodi-18698263.jpg";
-import biriyani from "../../../public/images/pexels-aboodi-18698229.jpg"
-import chicken from "../../../public/images/pexels-aboodi-18698238.jpg"
-import meat from "../../../public/images/pexels-aboodi-18698241.jpg"
-import prawn from "../../../public/images/pexels-aboodi-18698237.jpg"
-import mutton from "../../../public/images/pexels-aboodi-18698234.jpg"
-import grill from "../../../public/images/pexels-aboodi-18698222 (1).jpg"
+import purple from "../../../public/images/prwn.jpg";
+import burger from "../../../public/images/noodls.jpg";
+import biriyani from "../../../public/images/str frd.jpg"
+import chicken from "../../../public/images/lhsuni.jpg"
+import meat from "../../../public/images/fish.jpg"
+import prawn from "../../../public/images/bryni.jpg"
+import mutton from "../../../public/images/malaitikka.jpg"
+import grill from "../../../public/images/tandoorichickn.jpg"
 import Card from "@/Components/Card";
 
 const featuredProductsData =[

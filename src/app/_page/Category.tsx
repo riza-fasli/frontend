@@ -4,7 +4,7 @@ import React from 'react'
 import purple from "../../../public/images/delis.jpg"
 import burger from "../../../public/images/casual dining.jpg"
 import biriyani from "../../../public/images/bffets.jpg"
-import chicken from "../../../public/images/fast casual2.jpg"
+import chicken from "../../../public/images/fastcsl.jpg"
 
 
 import Link from "next/link";
