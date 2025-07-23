@@ -74,7 +74,7 @@ const featuredProductsData =[
 const FeaturedProducts = () => {
   return (
     <div className=" pb-5 bg-amber-950 text-amber-50 ">
-    <h1 className="font-mono text-5xl flex justify-center text-amber-50 p-7 bg-amber-950">
+    <h1 className="italic text-5xl flex justify-center text-amber-50 p-7 bg-amber-950">
           Featured Products
         </h1>
 

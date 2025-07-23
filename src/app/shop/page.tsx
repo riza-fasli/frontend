@@ -1,43 +1,74 @@
+import Image from "next/image";
 import Link from "next/link";
+import image1 from "../../../public/images/whtlyt.jpg";
+
 import React from "react";
 
- const Categories= [
-  {
-  categoryName:"Casual Dining",
-  },
-  {
-  categoryName:"Delis",
-  },
-  {
- categoryName:"Buffets",
-  },
-  {
-  categoryName:"Fast Casual",
-  },
-  
-             
+// const Categories = [
+//   {
+//     categoryName: "Casual Dining",
+//     image: image2,
+//   },
+//   {
+//     categoryName: "Delis",
+//     image: image3,
+//   },
+//   {
+//     categoryName: "Buffets",
+//     image: image4,
+//   },
+//   {
+//     categoryName: "Fast Casual",
+//     image: image5,
+//   },
+// ];
 
-]
 
+const page = async() => {
 
-const page = () => {
+  const res = await fetch('https://dummyjson.com/products/category-list')
+  const CategoriesData = await res.json()
+  // console.log("cate::",CategoriesData)
+
   return (
-<>
-        <div className="flex items-center flex-col pt-15 pb-5">
-          <h1 className="text-4xl font-semibold text-amber-950">CATEGORIES</h1>
-          <h1 className="text-1xl font-mono text-amber-950">SHOP BY CATEGORIES</h1>
-        </div>
-          <div className=" grid  grid-cols-4  grid-rows-2 gap-2 p-5 max-md:grid-cols-1  ">
-            {Categories.map((item,index) => (
-               <Link href={`/shop/${item.categoryName}`} 
-               key={index} className="text-amber-950  bottom-0 text-1xl m-1 font-light  bg-amber-800/40 p-20">{item.categoryName}</Link>
-          
-            ))}
-        
-           
+    <>
+      <div>
+        <div className="relative min-h-[300vh] ">
+          <Image src={image1} className="object-cover" fill alt="image1" />
+
+          <div className=" absolute flex  justify-center w-full pt-15">
+            <div>
+              <h1 className="   text-4xl font-bold text-amber-50 ">
+                CATEGORIES
+              </h1>
+              <h1 className=" text-1xl font-semibold flex justify-center text-amber-50">
+                SHOP BY CATEGORIES
+              </h1>
+            </div>
           </div>
-    
-</>
+
+          <div className="absolute  grid  grid-cols-4  grid-rows-2 gap-5 pt-30 max-md:grid-cols-1  ">
+            {CategoriesData.map((item: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, index: React.Key | null | undefined) => (
+              <Link
+                href={`/shop/${item}`}
+                key={index}
+                className="text-amber-50 flex justify-center text-2xl m-1 font-semibold 2 "
+              >
+                <div className="relative size-70 rounded-s, border-2 border-amber-950 ">
+                  <Image
+                    src={item.image}
+                    fill
+                    className="object-cover"
+                    alt=""
+                  />
+                  <p className="absolute ">{item}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

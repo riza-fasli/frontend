@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <>
       <div className="h-14 bg-amber-950 flex justify-between items-center  p-[3rem] ">
-        <div className="font-mono font text-5xl text-amber-50  flex justify-between "> <Spoon className='size-9'/>Zestzy </div>
+        <div className="italic font text-5xl text-amber-50  flex justify-between "> <Spoon className='size-9'/>Zestzy </div>
        
         
 

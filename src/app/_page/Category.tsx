@@ -32,27 +32,27 @@ import Link from "next/link";
 const Category = () => {
   return (
     <div className="bg-amber-950">
-    <h1 className='font-mono text-5xl flex justify-center text-amber-50 p-15 pb-5  bg-amber-950 '>Food Categories</h1>
+    <h1 className='italic text-5xl flex justify-center text-amber-50 p-10 pb-5  bg-amber-950 '>Food Categories</h1>
      
-    <div className=" grid grid-cols-3 grid-rows-2 gap-10 p-5 max-md:grid-cols-1 ">
+    <div className=" grid grid-cols-3 grid-rows-2 gap-3 p-3 max-md:grid-cols-1 ">
       <Link href={"/"} className="relative h-[500px] col-span-1 row-span-2 ">
       <Image fill src={CategoryData[0].image} className="object-cover" alt="purple" />
-      <p className="absolute bottom-0 text-2xl m-1 font-mono text-amber-50 bg-amber-950 p-2">{CategoryData[0].CategoryName}</p>
+      <p className="absolute bottom-0 text-2xl m-1  font-mono text-amber-50/60 bg-amber-950 p-2">{CategoryData[0].CategoryName}</p>
       </Link>
   
       <Link href={"/"} className="relative h-[500px] col-span-1 row-span-2 ">
       <Image fill src={CategoryData[1].image} className="object-cover" alt="burger" />
-      <p className="absolute bottom-0 text-2xl m-1 font-mono text-amber-50 bg-amber-950 p-2">{CategoryData[1].CategoryName}</p>
+      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[1].CategoryName}</p>
       </Link>
   
       <Link href={"/"} className="relative h-auto col-span-1 row-span-1 max-md:h-[500px] ">
       <Image fill src={CategoryData[2].image} className="object-cover" alt="biriyani" />
-      <p className="absolute bottom-0 text-2xl m-1 font-mono text-amber-50 bg-amber-950 p-2">{CategoryData[2].CategoryName}</p>
+      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[2].CategoryName}</p>
       </Link>
   
       <Link href={"/"} className="relative h-auto col-span-1 row-span-1 max-md:h-[500px]">
       <Image fill src={CategoryData[3].image} className="object-cover" alt="chicken" />
-      <p className="absolute bottom-0 text-2xl m-1 font-mono text-amber-50 bg-amber-950 p-2">{CategoryData[3].CategoryName}</p>
+      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[3].CategoryName}</p>
       </Link>
 
      

@@ -18,7 +18,7 @@ const gallery = [
    },
    { image: purple3, 
     heading: "Delicious & Mouth Watering Test.",
-    subheading: "Let’s Make Your Next Meal Unforgettable",
+  subheading: "Let’s Make Your Next Meal Unforgettable",
     
     
    }];
@@ -54,8 +54,8 @@ const Carousel = () => {
         alt="purple"
       />
       <div className=" absolute h-screen flex justify-center items-center flex-col w-full">
-        <h1 className="font-bold text-5xl text-amber-50">{gallery.at(activeImage)?.heading}</h1>
-        <h2 className="font-light text-3xl text-amber-50">{gallery.at(activeImage)?.subheading}</h2>
+        <h1 className="italic text-5xl text-amber-50/70">{gallery.at(activeImage)?.heading}</h1>
+        <h2 className="italic text-3xl text-amber-50/70">{gallery.at(activeImage)?.subheading}</h2>
       </div>
       <div className="absolute h-screen flex items-center left-0">
         <Arrowleft onClick={previous}
