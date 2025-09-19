@@ -1,5 +1,5 @@
 import React from "react";
-import burger from "../../../../../public/images/bffets.jpg";
+
 
 import Product from "./_component/Product";
 

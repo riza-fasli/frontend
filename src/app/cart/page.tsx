@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import image4 from "../../../public/images/whtlyt.jpg";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import Link from "next/link";
 // const products =[
@@ -33,12 +33,23 @@ import Link from "next/link";
 const Page = () => {
   const { items, isEmpty, updateItemQuantity, removeItem } = useCart();
   console.log("itemsdsd::", items);
+  // const [isClient, setIsClient] = useState(false);
+
+  // useEffect(() => {
+  //   if (!isClient) {
+  //     setIsClient(true);
+  //   }
+  // }, [isClient]);
+  // if (isClient) {
+  //   return null;
+  // }
+
   if (isEmpty) return <p className="italic">Your cart is empty</p>;
   return (
-    <div className=" grid grid-cols-3 p-5 relative h-screen">
+    <div className=" grid grid-cols-3 pt-5 relative h-screen">
       <Image src={image4} fill className="object-cover" alt="image2" />
 
-      <table className=" col-span-2 z-10">
+      <table className=" col-span-2 z-5 ">
         <thead>
           <tr className="text-amber-950 ">
             <th></th>
@@ -50,23 +61,23 @@ const Page = () => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => (  
+          {items.map((item, index) => (
             <tr key={index} className="italic text-1xl  text-amber-950">
               <td>
-                <div className="relative size-50 mb-70 border-2 border-amber-950">
+                <div className="relative size-40 mb-20 border-2 border-amber-950">
                   <Image
-                    src={item.image}
+                    src={item.thumbnail}
                     fill
                     className="object-cover"
                     alt=""
                   />
                 </div>
               </td>
-              <td>{item.productname}</td>
+              <td>{item.title}</td>
 
               <td>{item.quantity}</td>
               <td>
-                <div className="flex gap3 mb-100 ">
+                <div className="flex gap3  ">
                   <button
                     onClick={() =>
                       updateItemQuantity(item.id, (item.quantity ?? 0) - 1)
@@ -75,7 +86,7 @@ const Page = () => {
                   >
                     -
                   </button>
-                  <p>{item.quantity}</p>
+                  <p>{item.quantity }</p>
                   <button
                     onClick={() =>
                       updateItemQuantity(item.id, (item.quantity ?? 0) + 1)
@@ -86,11 +97,11 @@ const Page = () => {
                   </button>
                 </div>
               </td>
-              <td className="mb-100">{item.itemTotal}</td>
+              <td className="">{item.itemTotal?.toFixed(2)}</td>
               <td>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="hover:bg-[#A86523] bg-yellow-700/40  text-amber-950  rounded-sm  p-2 mb-100"
+                  className="hover:bg-[#A86523] bg-yellow-700/40  text-amber-950  rounded-sm  p-2 "
                 >
                   delete
                 </button>

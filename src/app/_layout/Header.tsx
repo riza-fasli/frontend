@@ -8,15 +8,24 @@ import Spoon from "@/icons/Spoon";
 import Link from "next/link";
 import React, { useState } from "react";
 
+import { useCart } from "react-use-cart";
+
 const Header = () => {
+  const { totalUniqueItems } = useCart();
   const [menu, setMenu] = useState(false);
+  // const client = useClient();
+  // if (!client)
+  //   return null;
+  
 
   return (
     <>
       <div className="h-14 bg-amber-950 flex justify-between items-center  p-[3rem] ">
-        <div className="italic font text-5xl text-amber-50  flex justify-between "> <Spoon className='size-9'/>Zestzy </div>
-       
-        
+        <div className="italic font text-5xl text-amber-50  flex justify-between ">
+          {" "}
+          <Spoon className="size-9" />
+          Zestzy{" "}
+        </div>
 
         <div className="flex justify-between p-[2rem] items-center gap-[1rem] text-amber-50 font-bold max-md:hidden">
           <Link href={"/"}>Home</Link>
@@ -25,8 +34,12 @@ const Header = () => {
           <Link href={"/login"}>Login</Link>
 
           <Person className="size-6" />
-          <div className="relative"><Cart className="size-7" />
-          <p className="absolute -top-2  bg-amber-700/60 -right-1 rounded-full size-5 text-sm text-center">0</p></div>
+          <Link href={"/cart"} className="relative">
+            <Cart className="size-7" />
+            <p className="absolute -top-2  bg-amber-700/60 -right-1 rounded-full size-5 text-sm text-center">
+              {totalUniqueItems}
+            </p>
+          </Link>
         </div>
 
         {menu === false ? (
@@ -41,9 +54,11 @@ const Header = () => {
               <h1>Shop</h1>
               <h1>Contact</h1>
               <h1>Login</h1>
-  
+
               <div className="flex gap-2 ">
-                <Link href={"/cart"}><Cart className="size-7" /></Link>
+                <Link href={"/cart"}>
+                  <Cart className="size-7" />
+                </Link>
                 <Person className="size-1" />
                 <Cross
                   onClick={() => setMenu(false)}
@@ -51,12 +66,10 @@ const Header = () => {
                 />
               </div>
             </div>
-            <div onClick={() => setMenu(false)} className="fixed top-0 left-0 h-screen w-1/2 ">
-  
-              
-            </div>
-            
-           
+            <div
+              onClick={() => setMenu(false)}
+              className="fixed top-0 left-0 h-screen w-1/2 "
+            ></div>
           </>
         )}
       </div>

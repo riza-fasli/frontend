@@ -9,69 +9,71 @@ import prawn from "../../../public/images/bryni.jpg"
 import mutton from "../../../public/images/malaitikka.jpg"
 import grill from "../../../public/images/tandoorichickn.jpg"
 import Card from "@/Components/Card";
+import { StorageUrl } from "@/utils/BaseUrl";
 
-const featuredProductsData =[
-  {
-    image:purple,
-              productName:"Prawn skewer",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:700,
+// const featuredProductsData =[
+//   {
+//     image:purple,
+//               productName:"Prawn skewer",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:700,
 
-  },
-  {
-    image:burger,
-              productName:"Chowmein",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:850,
+//   },
+//   {
+//     image:burger,
+//               productName:"Chowmein",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:850,
 
-  },
-  {
-    image:biriyani,
-              productName:"Stir Fried Chicken",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:750,
+//   },
+//   {
+//     image:biriyani,
+//               productName:"Stir Fried Chicken",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:750,
 
-  },
-  {
-    image:chicken,
-              productName:"Dahi Lehsuni Tikka",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:950,
+//   },
+//   {
+//     image:chicken,
+//               productName:"Dahi Lehsuni Tikka",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:950,
 
-  },
-  {
-    image:meat,
-              productName:"Grilled Fish",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:780,
+//   },
+//   {
+//     image:meat,
+//               productName:"Grilled Fish",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:780,
 
-  },
-  {
-    image:prawn,
-              productName:"Mutton Biriyani",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:900,
+//   },
+//   {
+//     image:prawn,
+//               productName:"Mutton Biriyani",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:900,
 
-  },
-  {
-    image:mutton,
-              productName:"Chicken Malai Tikka",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:800,
+//   },
+//   {
+//     image:mutton,
+//               productName:"Chicken Malai Tikka",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:800,
 
-  },
-  {
-    image:grill,
-              productName:"Tandoori Chicken",
-              productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
-              price:700,
+//   },
+//   {
+//     image:grill,
+//               productName:"Tandoori Chicken",
+//               productDescription:"This dish typically consists of prawns or shrimps threaded onto skewers, often marinated in spices and herbs, and then grilled, pan-fried, or roasted until cooked through. They are frequently served as an appetizer or a main course, often accompanied by a dipping sauce or a squeeze of fresh lemon juice, as seen in the image.",
+//               price:700,
 
-  },
-]
+//   },
+// ]
 
 
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({featuredProductsData}) => {
+  console.log(featuredProductsData)
   return (
     <div className=" pb-5 bg-amber-950 text-amber-50 ">
     <h1 className="italic text-5xl flex justify-center text-amber-50 p-7 bg-amber-950">
@@ -81,13 +83,15 @@ const FeaturedProducts = () => {
 
        <div className="grid grid-cols-4 gap-3 p-5 max-md:grid">
 
-        {featuredProductsData.map((item,index) => (<Card
-        key={index}
-              image={item.image}
-              productName={item.productName}
-              productDescription={item.productDescription} 
-              price={item.price}
-            />))}
+        {featuredProductsData.map((item, index: number) => (
+          <Card
+            key={index}
+            image={StorageUrl+ item.image}
+            productName={item.name}
+            productDescription={item.description}
+            price={item.price}
+          />
+        ))}
             
             
        </div>
