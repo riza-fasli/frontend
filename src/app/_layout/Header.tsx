@@ -20,14 +20,14 @@ const Header = () => {
 
   return (
     <>
-      <div className="h-14 bg-amber-950 flex justify-between items-center  p-[3rem] ">
-        <div className="italic font text-5xl text-amber-50  flex justify-between ">
+      <div className="h-14  bg-gray-300/40 flex justify-between items-center  p-[3rem] ">
+        <div className="italic font text-5xl text-amber-950/40  flex justify-between ">
           {" "}
           <Spoon className="size-9" />
-          Zestzy{" "}
+          Veloura{" "}
         </div>
 
-        <div className="flex justify-between p-[2rem] items-center gap-[1rem] text-amber-50 font-bold max-md:hidden">
+        <div className="flex justify-between p-[2rem] items-center gap-[1rem] text-amber-950/40 font-bold max-md:hidden">
           <Link href={"/"}>Home</Link>
           <Link href={"/shop"}>Shop</Link>
           <Link href={"/contact"}>Contact</Link>
@@ -36,7 +36,7 @@ const Header = () => {
           <Person className="size-6" />
           <Link href={"/cart"} className="relative">
             <Cart className="size-7" />
-            <p className="absolute -top-2  bg-amber-700/60 -right-1 rounded-full size-5 text-sm text-center">
+            <p className="absolute -top-2  bg-gray-300/50 -right-1 rounded-full size-5 text-sm text-center">
               {totalUniqueItems}
             </p>
           </Link>

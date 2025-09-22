@@ -2,7 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import image1 from "../../../public/images/whtlyt.jpg";
 
+
+const getAllShopPageData = async () => {
+  const response = await Api.getAllShopPageData();
+  console.log(response.data.data)
+  return response.data.data.categories
+};
+
 import React from "react";
+import { Api } from "@/api/config/Api";
 
 // const Categories = [
 //   {
@@ -26,9 +34,10 @@ import React from "react";
 
 const page = async() => {
 
-  const res = await fetch('https://dummyjson.com/products/category-list')
-  const CategoriesData = await res.json()
-  // console.log("cate::",CategoriesData)
+  const Homepage = await getAllShopPageData();
+  console.log(Homepage)
+
+
 
   return (
     <>
@@ -48,20 +57,19 @@ const page = async() => {
           </div>
 
           <div className="absolute  grid  grid-cols-4  grid-rows-2 gap-5 pt-30 max-md:grid-cols-1  ">
-            {CategoriesData.map((item: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, index: React.Key | null | undefined) => (
-              <Link
-                href={`/shop/${item}`}
+            {CategoriesData.map((item: string | name:string | description:string | image:string | ))}
+                href={`/shop/${item.name}`}
                 key={index}
                 className="text-amber-50 flex justify-center text-2xl m-1 font-semibold 2 "
               >
                 <div className="relative size-70 rounded-s, border-2 border-amber-950 ">
-                  <Image
+                  {/* <Image
                     src={item.image}
                     fill
                     className="object-cover"
                     alt=""
-                  />
-                  <p className="absolute ">{item}</p>
+                  /> */}
+                  <p className="absolute ">{item.description}</p>
                 </div>
               </Link>
             ))}

@@ -3,7 +3,15 @@ import React from "react";
 import image2 from "../../../../public/images/whtlyt.jpg";
 import Link from "next/link";
 import Image from "next/image";
+import { Api } from "@/api/config/Api";
+import { StorageUrl } from "@/utils/BaseUrl";
 
+
+const getAllProductPageData = async (id) => {
+  const response = await Api.getAllProductPageData(id);
+  console.log(response.data.data)
+  return response.data.data.products[0]
+};
 // const productData =[
 //     {
 //         productName:"Casual Dining",
@@ -33,18 +41,16 @@ import Image from "next/image";
 
 //     }
 // ]
-const Page = async ({ params }) => {
-  console.log("params::", params);
-  const categoryName = params.products;
+const products = async ({ params }: {params: { products: string}})  => {
+  console.log("params::", products);
+  const productId = params.products;
 
-  const res = await fetch(
-    "https://dummyjson.com/products/category/" + categoryName
-  );
 
-  const allproducts = await res.json();
+const productData = await getAllProductPageData +productId;
+  console.log("productttts::::",productData)
 
   // console.log("allproducts::",allproducts)
-  const productData = allproducts.products;
+  // const productData = allproducts.products;
 
   // console.log("product:::",productData)
 
@@ -64,13 +70,13 @@ const Page = async ({ params }) => {
         </div>
 
         <div className=" absolute grid grid-cols-5 gap-3  max-md:grid italic text-1xl text-amber-950  w-full pt-21">
-          {productData.map((item, index) => (
-            <Link href={`/shop/product/${item.id}`} key={index}>
+          {productData.map((item:string, index:string) => (
+            <Link href={`/shop/product/${item._id}`} key={index}>
               <Card
-                productName={item.title}
+                productName={item.name}
                 productDescription={item.description}
                 price={item.price}
-                image={item.thumbnail}
+                image={StorageUrl + item.image}
               />
             </Link>
           ))}
@@ -80,4 +86,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default products;

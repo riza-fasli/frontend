@@ -2,11 +2,21 @@ import React from "react";
 
 
 import Product from "./_component/Product";
+import { Api } from "@/api/config/Api";
 
-const Page = async ({ params }: {params: { product: string}}) => {
+
+const getOneProductPageData = async (id) => {
+  const response = await Api.getOneProductPageData(id);
+  console.log(response.data.data)
+  return response.data.data.product[0]
+};
+
+const product = async ({ params }: {params: { product: string}}) => {
   const productId = params.product;
-  const res = await fetch("https://dummyjson.com/products/" +productId);
-  const product = await res.json()
+  console.log("producct:::",productId)
+  const productone = await getOneProductPageData +productId;
+  console.log("productttts::::",productone)
+  
   // const product = {
   //   id: "1",
   //   image: burger,
@@ -18,9 +28,9 @@ const Page = async ({ params }: {params: { product: string}}) => {
 
   return (
     <div>
-      <Product product={product} />
+      <Product product={productone} />
     </div>
   );
 };
 
-export default Page;
+export default product;
