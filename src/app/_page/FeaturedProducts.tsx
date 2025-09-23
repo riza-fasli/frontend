@@ -75,9 +75,9 @@ import { StorageUrl } from "@/utils/BaseUrl";
 const FeaturedProducts = ({featuredProductsData}) => {
   console.log(featuredProductsData)
   return (
-    <div className=" pb-5 bg-amber-950 text-amber-50 ">
-    <h1 className="italic text-5xl flex justify-center text-amber-50 p-7 bg-amber-950">
-          Featured Products
+    <div className=" pb-5  text-gray-500 ">
+    <h1 className="italic text-5xl flex justify-center text-gray-500/40 p-7 ">
+          NEUTRAL COLLECTIONS
         </h1>
 
 

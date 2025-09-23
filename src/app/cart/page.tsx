@@ -4,6 +4,7 @@ import image4 from "../../../public/images/whtlyt.jpg";
 import React, { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import Link from "next/link";
+import { StorageUrl } from "@/utils/BaseUrl";
 // const products =[
 //   {id:1,
 //   image:image1,
@@ -32,7 +33,7 @@ import Link from "next/link";
 // ]
 const Page = () => {
   const { items, isEmpty, updateItemQuantity, removeItem } = useCart();
-  console.log("itemsdsd::", items);
+  console.log("items::", items);
   // const [isClient, setIsClient] = useState(false);
 
   // useEffect(() => {
@@ -66,14 +67,15 @@ const Page = () => {
               <td>
                 <div className="relative size-40 mb-20 border-2 border-amber-950">
                   <Image
-                    src={item.thumbnail}
+                    src={StorageUrl + item.image}
                     fill
                     className="object-cover"
                     alt=""
                   />
                 </div>
               </td>
-              <td>{item.title}</td>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
 
               <td>{item.quantity}</td>
               <td>

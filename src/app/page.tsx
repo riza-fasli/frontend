@@ -3,6 +3,8 @@ import Carousel from "./_page/Carousel";
 import Category from "./_page/Category";
 import FeaturedProducts from "./_page/FeaturedProducts";
 
+
+
 const getAllHomePageData = async () => {
   const response = await Api.getAllHomePageData();
   console.log(response.data.data)

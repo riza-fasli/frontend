@@ -34,28 +34,28 @@ import Link from "next/link";
 const Category = ({CategoryData}) => {
   console.log("category::::",CategoryData)
   return (
-    <div className="bg-amber-950">
-    <h1 className='italic text-5xl flex justify-center text-amber-50 p-10 pb-5  bg-amber-950 '>Food Categories</h1>
+    <div >
+    <h1 className=' text-5xl flex justify-center text-gray-500/40 p-10 pb-5   '>OUR PRODUCTS</h1>
      
     <div className=" grid grid-cols-3 grid-rows-2 gap-3 p-3 max-md:grid-cols-1 ">
       <Link href={"/"} className="relative h-[500px] col-span-1 row-span-2 ">
       <Image fill src={StorageUrl+ CategoryData[0].image} className="object-cover" alt="purple" />
-      <p className="absolute bottom-0 text-2xl m-1  font-mono text-amber-50/60 bg-amber-950 p-2">{CategoryData[0].name}</p>
+      <p className="absolute bottom-0 text-2xl m-1  font-mono text-amber-50/60  p-2">{CategoryData[0].name}</p>
       </Link>
   
       <Link href={"/"} className="relative h-[500px] col-span-1 row-span-2 ">
       <Image fill src={StorageUrl+ CategoryData[1].image} className="object-cover" alt="burger" />
-      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[1].name}</p>
+      <p className="absolute bottom-0 text-2xl m-1  text-amber-50/60  p-2">{CategoryData[1].name}</p>
       </Link>
   
       <Link href={"/"} className="relative h-auto col-span-1 row-span-1 max-md:h-[500px] ">
       <Image fill src={StorageUrl+ CategoryData[2].image} className="object-cover" alt="biriyani" />
-      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[2].name}</p>
+      <p className="absolute bottom-0 text-2xl m-1  text-amber-50/60  p-2">{CategoryData[2].name}</p>
       </Link>
   
       <Link href={"/"} className="relative h-auto col-span-1 row-span-1 max-md:h-[500px]">
       <Image fill src={StorageUrl+ CategoryData[3].image} className="object-cover" alt="chicken" />
-      <p className="absolute bottom-0 text-2xl m-1 italic text-amber-50/60 bg-amber-950 p-2">{CategoryData[3].name}</p>
+      <p className="absolute bottom-0 text-2xl m-1  text-amber-50/60  p-2">{CategoryData[3].name}</p>
       </Link>
 
      
