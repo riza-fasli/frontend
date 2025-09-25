@@ -14,6 +14,8 @@ const getAllHomePageData = async () => {
 // console.log(banners)
 
 export default async function Home() {
+
+
   const Homepage = await getAllHomePageData();
 
   return (

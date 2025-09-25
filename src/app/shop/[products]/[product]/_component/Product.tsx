@@ -31,10 +31,10 @@ const Product = ({ product }: props) => {
   return (
     <div>
       <div className="relative h-screen ">
-        <Image src={image1} fill className="object-cover" alt="image1" />
+        
 
         <div className="absolute z-10 flex pl-10 pt-10 pb-10">
-          <div className="relative h-[500px] w-[500px] border-2 border-b-amber-400/40]">
+          <div className="relative h-[500px] w-[500px]  ">
             <Image
               fill
               src={StorageUrl + product.image}
@@ -42,7 +42,7 @@ const Product = ({ product }: props) => {
               alt="burger"
             />
           </div>
-          <div className="text-amber-950 p-10  ">
+          <div className="text-gray-500/40 p-10  ">
             <header className=" italic  text-4xl ">{product.name}</header>
 
             <p className="  italic mt-6 ">{product.description}</p>

@@ -76,7 +76,7 @@ const FeaturedProducts = ({featuredProductsData}) => {
   console.log(featuredProductsData)
   return (
     <div className=" pb-5  text-gray-500 ">
-    <h1 className="italic text-5xl flex justify-center text-gray-500/40 p-7 ">
+    <h1 className=" text-5xl flex justify-center text-gray-500/40 p-7 ">
           NEUTRAL COLLECTIONS
         </h1>
 

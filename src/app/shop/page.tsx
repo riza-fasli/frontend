@@ -26,10 +26,11 @@ const categories = Shoppage.categories
 
           <div className=" absolute flex  justify-center w-full pt-15">
             <div>
-              <h1 className="   text-4xl font-bold text-amber-50 ">
+              <h1 className="   text-4xl font-bold text-gray-400/30 ">
                 CATEGORIES
               </h1>
-              <h1 className=" text-1xl font-semibold flex justify-center text-amber-50">
+              <h1 className=" text-1xl font-semibold flex justify-center text-gray-400/30
+              ">
                 SHOP BY CATEGORIES
               </h1>
             </div>
@@ -40,9 +41,9 @@ const categories = Shoppage.categories
                <Link
                href={`/shop/${item._id}`}
                 key={index}
-                className="text-amber-50 flex justify-center text-2xl m-1 font-semibold 2 "
+                className="text-gray-200/60 flex justify-center text-2xl m-1 font-semibold 2 "
               >
-                <div className="relative size-70 rounded-s, border-2 border-amber-950 ">
+                <div className="relative size-70 rounded-s, border-2  ">
                   <Image
                     src={StorageUrl + item.image}
                     fill

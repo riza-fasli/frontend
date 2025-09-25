@@ -35,7 +35,7 @@ const Category = ({CategoryData}) => {
   console.log("category::::",CategoryData)
   return (
     <div >
-    <h1 className=' text-5xl flex justify-center text-gray-500/40 p-10 pb-5   '>OUR PRODUCTS</h1>
+    <h1 className=' text-5xl flex justify-center text-gray-400 p-10 pb-5   '>OUR PRODUCTS</h1>
      
     <div className=" grid grid-cols-3 grid-rows-2 gap-3 p-3 max-md:grid-cols-1 ">
       <Link href={"/"} className="relative h-[500px] col-span-1 row-span-2 ">

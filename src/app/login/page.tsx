@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import image1 from "../../../public/images/whtlyt.jpg"
 import z from "zod";
+import { authClient } from "@/lib/auth-client";
 
 const Page = () => {
   const loginschema = z.object({
@@ -24,21 +25,45 @@ type TLoginschema = z.infer<typeof loginschema>;
 
   });
 
-  const submit = (data) => console.log("loginData:", data);
+  const submit = async(data) => {
+    console.log("loginData:", data);
+
+  const response = await authClient.signIn.email(
+        {
+       
+          email: data.email,
+          password: data.password,
+        },
+        {
+          onRequest: () => {
+            // setPending(true);
+          },
+  
+          onSuccess: () => {
+            window.alert("success");
+          },
+          onError: (error) => {
+            // setPending(false);
+            window.alert("Error");
+            console.log("error:::", error);
+          },
+        }
+      );
+    };
 
   return (
      <div className='relative h-screen grid grid-cols-3 pl-90 '>
-              <Image src={image1} fill className='object-cover' alt='image2'/>
+            
     <form onSubmit={handleSubmit(submit)}>
-      <div className="absolute relattive    bg-amber-600/20 w-fit m-auto mt-30 mb-30">
-        <div className=" flex justify-center items-center text-amber-950 p-9 flex-col font-bold">
+      <div className="absolute relattive    bg-gray-400 w-fit m-auto mt-30 mb-30">
+        <div className=" flex justify-center items-center text-gray-200/60 p-9 flex-col font-bold">
           <h1 className="text-4xl">LOGIN TO YOUR ACCOUNT</h1>
           <h1 className="text-2xl mt-1">PLEASE ENTER YOUR DETAILS</h1>
 
           <div className="w-full">
             <input
               {...register("email")}
-              className="w-full bg-amber-900/30 rounded-2xl p-2 mt-7 "
+              className="w-full text-amber-50 rounded-2xl p-2 mt-7 "
               type="text "
               placeholder="email"
             />
@@ -49,7 +74,7 @@ type TLoginschema = z.infer<typeof loginschema>;
           <div className="relative w-full">
             <input
               {...register("password")}
-              className="w-full bg-amber-900/30 rounded-2xl p-2 mt-3 "
+              className="w-full text-amber-50 rounded-2xl p-2 mt-3 "
               type="password" 
               placeholder="password"
             />
@@ -64,7 +89,7 @@ type TLoginschema = z.infer<typeof loginschema>;
              <p className="text-red-500">{errors.password?.message}</p>
           </div>
 
-          <button className="bg-yellow-700/50 w-full rounded-2xl p-2 mt-3">
+          <button className="text-gray-200/60 w-full rounded-2xl p-2 mt-3">
             Login
           </button>
           <p>
