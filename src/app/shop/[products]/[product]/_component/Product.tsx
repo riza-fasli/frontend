@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useCart } from "react-use-cart";
 import image1 from "../../../../../../public/images/whtlyt.jpg";
 import { StorageUrl } from "@/utils/BaseUrl";
+import { StorageUrl } from "@/utils/BaseUrl";
 
 type props = {
   product: {
@@ -12,6 +13,7 @@ type props = {
     image: StaticImageData;
     name: string;
     description: string;
+    brand:string;
     price: number;
     brand: string;
   };

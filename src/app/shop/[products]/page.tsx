@@ -38,6 +38,7 @@ const Page = async ({ params }) => {
             <Link href={`/shop/product/${item._id}`} key={index}>
               <Card
                 productName={item.name}
+                productName={item.name}
                 productDescription={item.description}
                 price={item.price}
                 image={StorageUrl+item.image}
@@ -50,4 +51,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default products;

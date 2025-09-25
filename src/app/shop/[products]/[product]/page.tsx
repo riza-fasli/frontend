@@ -27,9 +27,9 @@ const Page = async ({ params }: {params: { product: string}}) => {
 
   return (
     <div>
-      <Product product={product} />
+      <Product product={productone} />
     </div>
   );
 };
 
-export default Page;
+export default product;
