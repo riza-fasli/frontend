@@ -3,8 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
-import Image from "next/image";
-import image1 from "../../../public/images/whtlyt.jpg"
+
+import { useCart } from "react-use-cart";
+import { useRouter } from "next/navigation";
+import { Api } from "@/api/config/Api";
+
 const Page = () => {
   const formschema = z.object({
     firstname: z.string().min(1, ""),
@@ -23,28 +26,36 @@ const Page = () => {
     formState: { errors },
   } = useForm<TFormschema>({ resolver: zodResolver(formschema) });
 
-  const submit = (data) => console.log("loginData:", data);
+  const { items } = useCart();
 
-  console.log("error:::",errors)
+  const userId = window.localStorage.getItem("userId");
 
-  
+  const router = useRouter();
+
+  const submit = async (data: object) => {
+    if (!userId) {
+      window.alert("please login first");
+      router.push("/login");
+    }
+    console.log("");
+
+    const check = {
+      shippingDetails: data,
+      cartItems: items,
+      userId : userId
+    };
+
+    const response = await Api.CreateOrder(check);
+    console.log(response);
+    if (response.success) {
+      router.push(`/payment?orderId=${response.data.orderId}`);
+    }
+  };
 
   return (
-    
-    
-      
-
-         <div className='relative h-screen grid grid-cols-3 '>
-          <Image src={image1} fill className='object-cover' alt='image2'/>
-        
-       
-      <form
-        onSubmit={handleSubmit(submit)}
-        className="col-span-2 z-10 "
-      >
-        <h1 className=" italic text-amber-950 text-4xl mt-9 pl-5">
-          Checkout
-        </h1>
+    <div className="relative h-screen grid grid-cols-3 ">
+      <form onSubmit={handleSubmit(submit)} className="col-span-2 z-10 ">
+        <h1 className=" italic text-amber-950 text-4xl mt-9 pl-5">Checkout</h1>
 
         <div className=" flex flex-col w-[500px] p-5 italic  ">
           <div className="flex gap-2  ">

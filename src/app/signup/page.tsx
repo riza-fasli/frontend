@@ -57,8 +57,8 @@ const Page = () => {
   };
   return (
     <div>
-      <div className=" relattive    bg-amber-600/40 w-fit m-auto mt-30 mb-30">
-        <div className="flex justify-center items-center text-amber-900 p-9 flex-col font-bold">
+      <div className=" relattive    bg-amber-50 w-fit m-auto mt-30 mb-30">
+        <div className="flex justify-center items-center text-amber-50 p-9 flex-col font-bold">
           <h1 className="text-3xl tex">SIGN UP TO YOUR ACCOUNT</h1>
           <h1 className="text-1xl">PLEASE ENTER YOUR DETAILS</h1>
 
@@ -85,7 +85,7 @@ const Page = () => {
             <div className="relative w-full">
               <input
                 {...register("password")}
-                className="w-full bg-amber-900/40 rounded-2xl p-2 mt-3 "
+                className="w-full bg-gray-500 rounded-2xl p-2 mt-3 "
                 type="password"
                 placeholder="Password"
               />
@@ -124,6 +124,7 @@ const Page = () => {
             <button className="bg-yellow-700 w-full rounded-2xl p-2 mt-3">
               Sign Up
             </button>
+
 
             <p>
               Already have an account? <Link href={"/login"}>Login</Link>

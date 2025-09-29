@@ -1,54 +1,20 @@
 "use client";
 import Image from "next/image";
-import image4 from "../../../public/images/whtlyt.jpg";
+
 import React, { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import Link from "next/link";
 import { StorageUrl } from "@/utils/BaseUrl";
-// const products =[
-//   {id:1,
-//   image:image1,
-//   name: "delis",
-//   price: 900,
-//   quantity:1,
-//   subtotal:6700
-//   },
 
-//   {id:1,
-//   image:image2,
-//   name: "buffets",
-//   price: 700,
-//   quantity:1,
-//   subtotal:8000
-//   },
-
-//   {id:1,
-//   image:image3,
-//   name: "casual dining",
-//   price: 1000,
-//   quantity:1,
-//   subtotal:9500
-//   },
-
-// ]
 const Page = () => {
   const { items, isEmpty, updateItemQuantity, removeItem } = useCart();
   console.log("items::", items);
-  // const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   if (!isClient) {
-  //     setIsClient(true);
-  //   }
-  // }, [isClient]);
-  // if (isClient) {
-  //   return null;
-  // }
+ 
 
   if (isEmpty) return <p className="italic">Your cart is empty</p>;
   return (
     <div className=" grid grid-cols-3 pt-5 relative h-screen">
-      <Image src={image4} fill className="object-cover" alt="image2" />
+   
 
       <table className=" col-span-2 z-5 ">
         <thead>

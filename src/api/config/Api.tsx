@@ -1,4 +1,3 @@
-
 import { axiosConfig } from "./axiosConfig";
 
 export const Api = {
@@ -15,5 +14,13 @@ export const Api = {
 
   getAllShopPageData: async function () {
     return await axiosConfig.get("shoppage/get-all");
+  },
+  CreateOrder: async function (body: object) {
+    const response = await axiosConfig.post("orderpage/create", body);
+    return response.data
+  },
+  payment: async function (id) {
+    const response = await axiosConfig.get(`orderpage/payment?orderId=${id}`);
+    return response.data
   },
 };
